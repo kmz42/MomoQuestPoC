@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adventure: one
+  event: one
+  completes_adventure: false
+  weight: 1
+
+two:
+  adventure: two
+  event: two
+  completes_adventure: false
+  weight: 1

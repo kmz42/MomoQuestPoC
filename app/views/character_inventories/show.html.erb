@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @character_inventory %>
+
+<div>
+  <%= link_to "Edit this character inventory", edit_character_inventory_path(@character_inventory) %> |
+  <%= link_to "Back to character inventories", character_inventories_path %>
+
+  <%= button_to "Destroy this character inventory", @character_inventory, method: :delete %>
+</div>

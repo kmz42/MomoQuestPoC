@@ -1,0 +1,52 @@
+<%= form_with(model: character_info) do |form| %>
+  <% if character_info.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(character_info.errors.count, "error") %> prohibited this character_info from being saved:</h2>
+
+      <ul>
+        <% character_info.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :character_id, style: "display: block" %>
+    <%= form.text_field :character_id %>
+  </div>
+
+  <div>
+    <%= form.label :level, style: "display: block" %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div>
+    <%= form.label :experience, style: "display: block" %>
+    <%= form.number_field :experience %>
+  </div>
+
+  <div>
+    <%= form.label :hp, style: "display: block" %>
+    <%= form.number_field :hp %>
+  </div>
+
+  <div>
+    <%= form.label :coziness, style: "display: block" %>
+    <%= form.number_field :coziness %>
+  </div>
+
+  <div>
+    <%= form.label :fluffiness, style: "display: block" %>
+    <%= form.number_field :fluffiness %>
+  </div>
+
+  <div>
+    <%= form.label :sleepiness, style: "display: block" %>
+    <%= form.number_field :sleepiness %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

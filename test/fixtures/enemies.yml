@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  hp: 1
+  power: 1
+  xp_on_defeat: 1
+  gold_on_defeat: 1
+
+two:
+  name: MyString
+  hp: 1
+  power: 1
+  xp_on_defeat: 1
+  gold_on_defeat: 1

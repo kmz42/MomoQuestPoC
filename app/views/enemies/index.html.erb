@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Enemies</h1>
+
+<div id="enemies">
+  <% @enemies.each do |enemy| %>
+    <%= render enemy %>
+    <p>
+      <%= link_to "Show this enemy", enemy %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New enemy", new_enemy_path %>

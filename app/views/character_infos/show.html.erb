@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @character_info %>
+
+<div>
+  <%= link_to "Edit this character info", edit_character_info_path(@character_info) %> |
+  <%= link_to "Back to character infos", character_infos_path %>
+
+  <%= button_to "Destroy this character info", @character_info, method: :delete %>
+</div>

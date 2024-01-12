@@ -1,0 +1,42 @@
+<%= form_with(model: enemy) do |form| %>
+  <% if enemy.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(enemy.errors.count, "error") %> prohibited this enemy from being saved:</h2>
+
+      <ul>
+        <% enemy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :hp, style: "display: block" %>
+    <%= form.number_field :hp %>
+  </div>
+
+  <div>
+    <%= form.label :power, style: "display: block" %>
+    <%= form.number_field :power %>
+  </div>
+
+  <div>
+    <%= form.label :xp_on_defeat, style: "display: block" %>
+    <%= form.number_field :xp_on_defeat %>
+  </div>
+
+  <div>
+    <%= form.label :gold_on_defeat, style: "display: block" %>
+    <%= form.number_field :gold_on_defeat %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @enemy %>
+
+<div>
+  <%= link_to "Edit this enemy", edit_enemy_path(@enemy) %> |
+  <%= link_to "Back to enemies", enemies_path %>
+
+  <%= button_to "Destroy this enemy", @enemy, method: :delete %>
+</div>

@@ -1,0 +1,27 @@
+<%= form_with(model: character_inventory) do |form| %>
+  <% if character_inventory.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(character_inventory.errors.count, "error") %> prohibited this character_inventory from being saved:</h2>
+
+      <ul>
+        <% character_inventory.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :character_id, style: "display: block" %>
+    <%= form.text_field :character_id %>
+  </div>
+
+  <div>
+    <%= form.label :money, style: "display: block" %>
+    <%= form.number_field :money %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

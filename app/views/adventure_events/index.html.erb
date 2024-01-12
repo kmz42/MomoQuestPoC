@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Adventure events</h1>
+
+<div id="adventure_events">
+  <% @adventure_events.each do |adventure_event| %>
+    <%= render adventure_event %>
+    <p>
+      <%= link_to "Show this adventure event", adventure_event %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New adventure event", new_adventure_event_path %>

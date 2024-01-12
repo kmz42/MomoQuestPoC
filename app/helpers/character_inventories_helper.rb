@@ -1,0 +1,2 @@
+module CharacterInventoriesHelper
+end
