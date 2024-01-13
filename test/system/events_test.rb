@@ -17,8 +17,8 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Description", with: @event.description
     fill_in "Enemy", with: @event.enemy_id
     fill_in "Gold found", with: @event.gold_found
+    fill_in "Kind", with: @event.kind
     fill_in "Name", with: @event.name
-    fill_in "Type", with: @event.type
     click_on "Create Event"
 
     assert_text "Event was successfully created"
@@ -32,8 +32,8 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Description", with: @event.description
     fill_in "Enemy", with: @event.enemy_id
     fill_in "Gold found", with: @event.gold_found
+    fill_in "Kind", with: @event.kind
     fill_in "Name", with: @event.name
-    fill_in "Type", with: @event.type
     click_on "Update Event"
 
     assert_text "Event was successfully updated"

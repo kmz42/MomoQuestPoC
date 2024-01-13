@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
+  kind: MyString
   name: MyString
   description: MyString
   enemy: one
   gold_found: 1
 
 two:
-  type: 
+  kind: MyString
   name: MyString
   description: MyString
   enemy: two

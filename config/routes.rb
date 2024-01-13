@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :events
   resources :character_inventories
   resources :character_infos
   resources :adventure_events
-  resources :events
   resources :enemies
   resources :adventures
   resources :characters

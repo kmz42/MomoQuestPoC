@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_12_120711) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "type"
+    t.string "kind"
     t.string "name"
     t.string "description"
     t.integer "enemy_id"

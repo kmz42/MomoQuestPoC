@@ -1,0 +1,2 @@
+class EnemyEvent < Event
+end
