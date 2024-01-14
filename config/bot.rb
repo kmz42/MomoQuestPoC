@@ -1,5 +1,11 @@
 module MomoQuest
+
+    require 'singleton'
+
     class Bot
+        include Singleton
+        attr_accessor :bot
+
         def initialize
             bot = Discordrb::Bot.new token: ENV['DISCORD_TOKEN'],
             client_id: ENV['DISCORD_CLIENT_ID'],
@@ -39,6 +45,11 @@ module MomoQuest
                     event.respond "Your character is already busy"
                     return
                 end
+
+                if character.update!(status: Character::STATUS_IN_ADVENTURE)
+                    # Queue job to kick off adventure
+                    AdventureJob.perform_later character
+                end
             end
 
             bot.message(content: '!status') do |event|
@@ -56,7 +67,12 @@ module MomoQuest
                 event.respond "Your character is at level #{info.level}, you have #{inventory.money} gold, your stats are: coziness=#{info.coziness}, fluffiness=#{info.fluffiness}, sleepiness=#{info.sleepiness}. Your courage is at #{info.hp} out of 100."
             end
 
-            bot.run
+            @bot = bot
+        end
+
+        # TODO using hardcoded channel
+        def send_to_general
+            ## TODO
         end
     end
 end

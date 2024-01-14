@@ -14,6 +14,8 @@ end
 
 module MomoQuest
   class Application < Rails::Application
+    attr_accessor :bot
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -30,8 +32,13 @@ module MomoQuest
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    Thread.new do
-      bot = MomoQuest::Bot.new
-    end
+    # bot = MomoQuest::Bot.new
+    # bot.bot.run(background: true)
+    # @bot = bot
+
+    # def bot
+    #   @bot
+    # end
+    Bot.instance.bot.run(background: true)
   end
 end
