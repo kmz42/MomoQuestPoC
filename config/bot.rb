@@ -14,6 +14,7 @@ module MomoQuest
             # Bot routes
             bot.message(content: '!help') do |event|
                 User.register_or_find_user(event.author.id)
+                event.respond "MomoQuest version 0.1\nTry !create, !status, and !begin_adventure"
             end
 
             bot.message(content: '!create') do |event|
