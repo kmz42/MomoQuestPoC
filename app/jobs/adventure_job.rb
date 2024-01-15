@@ -15,31 +15,53 @@ class AdventureJob < ApplicationJob
     # msg('Unimplemented, setting your character state back to idle')
     done = false
     while not done
-      # Sleep
-      sleep 3
-
       # Get a random event
       adventure_event = pick_adventure_event
       event = adventure_event.event
 
       # Process that event
       logs = event.process(character)
+      out_msg = ">>> "
+      
       for log in logs
-        msg(log)
+        # msg(log)
+        out_msg += "#{log}\n"
+
+        if out_msg.length > 1500
+          msg(out_msg)
+          out_msg = ">>> "
+        end
       end
 
+      msg(out_msg)
+
       # Update state
-      puts 'saving character'
       character.save!
+      character.character_info.save!
+      character.character_inventory.save!
       done = adventure_event.completes_adventure?
-      puts 'beginning next loop'
+
+      if character.hp == 0
+        done = true
+      end
+
+      # Sleep
+      sleep 3
+
+      unless done
+        msg('You prepare to continue your adventure!')
+      end
     end
 
     #
     # Adventure outro
     #
-    msg('You return victorious from your adventure!')
-
+    if character.is_alive?
+      msg('You return victorious from your adventure!')
+    else
+      msg("Oh dear. You run away from Wolfgang's Lair, never to return. Your adventures are now over. Forever.")
+    end
+    
     # Set character out of adventure TODO
     character.update!(status: Character::STATUS_IDLE)
   end

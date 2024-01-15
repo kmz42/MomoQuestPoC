@@ -1,5 +1,11 @@
 class Character < ApplicationRecord
   belongs_to :user
+  has_one :character_inventory
+  has_one :character_info
+
+  delegate :hp, :hp=, :level, :level=, :experience, :experience=, :coziness, :coziness=, :fluffiness, :flufiness=,
+           :sleepiness, :sleepiness=, to: :character_info
+  delegate :money, :money=, to: :character_inventory
 
   STATUS_IDLE = "idle"
   STATUS_IN_ADVENTURE = "in_adventure"
