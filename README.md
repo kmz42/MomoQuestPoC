@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Install ruby, rails
 
-Things you may want to cover:
+* Init db, also seed the db using rails db:seed
 
-* Ruby version
+* Make a .env or env vars for DISCORD_TOKEN and DISCORD_CLIENT_ID
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails server or rails console to start up the bot
